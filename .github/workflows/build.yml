@@ -50,12 +50,12 @@ jobs:
     name: 构建并发布
     needs: detect
     if: needs.detect.outputs.version != ''
-    runs-on: [self-hosted, linux]
+    runs-on: ubuntu-latest
     timeout-minutes: 720
-    env:
-      http_proxy: http://192.168.101.1:9001
-      https_proxy: http://192.168.101.1:9001
-      no_proxy: 127.0.0.1,localhost
+   # env:
+     # http_proxy: http://192.168.101.1:9001
+     # https_proxy: http://192.168.101.1:9001
+     # no_proxy: 127.0.0.1,localhost
     steps:
       - uses: actions/checkout@v4
       - name: 清理旧构建目录（释放磁盘）
