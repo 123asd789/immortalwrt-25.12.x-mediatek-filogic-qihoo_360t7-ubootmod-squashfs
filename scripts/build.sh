@@ -63,8 +63,8 @@ cp -f "$ROOT/config/$VERSION.config" .config
 make defconfig
 
 # 5) 构建
-echo "==> make -j$CPUS world （2 核约 8~10 小时）"
-make -j"$CPUS" world
+echo "==> make -j1 world （2 核约 8~10 小时）"
+make -j1 world
 
 echo
 echo "===== 构建完成 ====="
